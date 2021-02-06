@@ -1,7 +1,15 @@
 ## Testing
-Catch tcp traffic on localhost loopback (127.0.0.1) port 2000
+Catch tcp traffic on port 8080
 ```
-$ sudo tcpdump -v tcp -i lo0 -A -X port 2000
+$ sudo tcpdump tcp port 8080 -AX
+```
+Catch tcp traffic on port 8080 and write to packet.ppp file
+```
+$ sudo tcpdump tcp port 8080 -w packet.ppp
+```
+Reveal file
+```
+$ less packet.ppp
 ```
 ## Run
 ```
