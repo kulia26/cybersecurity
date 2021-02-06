@@ -4,6 +4,11 @@ const net = require('net');
 
 const socket = new net.Socket();
 
+const {config} = require('./test.config')
+
+// change to your private ip
+// const {config} = require('./prod.config')
+
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
@@ -53,6 +58,6 @@ socket.on('connect', () => {
 });
 
 socket.connect({
-  port: 8080,
-  host: '127.0.0.1',
+  port: config.port,
+  host: config.host,
 });
