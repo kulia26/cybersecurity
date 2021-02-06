@@ -4,6 +4,8 @@ const net = require('net');
 
 const socket = new net.Socket();
 
+socket.setEncoding('utf8');
+
 const {config} = require('./test.config')
 
 // change to your private ip

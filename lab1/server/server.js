@@ -76,6 +76,8 @@ const connection = socket => {
         bufferSize: socket.bufferSize,
     });
 
+    socket.setEncoding('utf8');
+
     const connectionStore = {
         state: {
             step: steps[0],
@@ -111,7 +113,3 @@ const server = net.createServer();
 server.on('connection', connection);
 
 server.listen(8080);
-
-require('dns').lookup(require('os').hostname(), function (err, add, fam) {
-    console.log('addr: ' + add);
-})
