@@ -111,3 +111,7 @@ const server = net.createServer();
 server.on('connection', connection);
 
 server.listen(8080);
+
+require('dns').lookup(require('os').hostname(), function (err, add, fam) {
+    console.log('addr: ' + add);
+})
